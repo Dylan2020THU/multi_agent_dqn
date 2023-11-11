@@ -33,7 +33,7 @@ agent = Agent(idx=0,
 
 """Main Training Loop"""
 
-n_episode = 6000
+n_episode = 3000
 n_time_step = 1000
 
 REWARD_BUFFER = np.empty(shape=n_episode)
@@ -61,7 +61,7 @@ for episode_i in range(n_episode):
             break
 
         # After solved, watch it play
-        if np.mean(REWARD_BUFFER[:episode_i]) >= 50:
+        if np.mean(REWARD_BUFFER[:episode_i]) >= 80:
             count = 0
             while True:
                 a = agent.online_net.act(s)
